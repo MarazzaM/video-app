@@ -22,12 +22,12 @@ export const UrlDisplay = () => {
   const handleStopTransmission = () => {
     // Use SweetAlert2 to confirm the action
     Swal.fire({
-      title: 'Confirm Detener transmisión',
-      text: 'Are you sure you want to stop the transmission?',
+      title: 'Confirmar detener transmisión',
+      text: 'Estas seguro que deseas detener la transmisión?',
       icon: 'warning',
       showCancelButton: true,
-      confirmButtonText: 'Yes, stop it',
-      cancelButtonText: 'No, cancel',
+      confirmButtonText: 'Si, detenla',
+      cancelButtonText: 'No, cancelar',
     }).then((result) => {
       if (result.isConfirmed) {
         // User confirmed, you can add the logic to stop the transmission here
