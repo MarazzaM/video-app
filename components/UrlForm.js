@@ -4,7 +4,6 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation'
-
 const UrlForm = () => {
   const [url, setUrl] = useState('');
   const [error, setError] = useState('');
@@ -57,9 +56,10 @@ const UrlForm = () => {
   return (
 <form onSubmit={handleSubmit} className="w-full max-w-md">
   <div className="mb-4">
-    <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="url">
+    <label className="block text-white text-sm font-bold mb-2" htmlFor="url">
       URL embed del vídeo
     </label>
+    <p className='text-white text-sm'>Utiliza esta opción para enviar a /video la URL que se inserte.</p>
     <input
       className={`w-full p-2 border rounded-md ${error ? 'border-red-500' : 'border-gray-300'}`}
       type="text"
@@ -78,7 +78,7 @@ const UrlForm = () => {
       type="submit"
       className="bg-blue-500 text-white font-bold py-2 px-4 rounded-md hover:bg-blue-600"
     >
-      Guardar
+      Publicar video
     </button>
   </div>
 </form>
