@@ -1,25 +1,27 @@
 // components/UrlDisplay.js
 "use client"
+// components/UrlDisplay.js
+
 import { useEffect, useState } from 'react';
 
 export const UrlDisplay = () => {
   const [url, setUrl] = useState('');
 
-  useEffect(() => {
-    const fetchUrlData = async () => {
-      try {
-        const response = await fetch('/api/fetchUrl');
-        if (response.ok) {
-          const data = await response.json();
-          setUrl(data.URL);
-        }
-      } catch (error) {
-        console.error('Error fetching URL:', error);
+  const fetchUrlData = async () => {
+    try {
+      const response = await fetch('/api/fetchUrl');
+      if (response.ok) {
+        const data = await response.json();
+        setUrl(data.URL);
       }
-    };
+    } catch (error) {
+      console.error('Error fetching URL:', error);
+    }
+  };
 
+  useEffect(() => {
     fetchUrlData();
-  }, []);
+  }, []); // Empty dependency array to fetch data on component mount
 
   return (
     <div>
