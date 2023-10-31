@@ -1,7 +1,7 @@
 // pages/video.js
 "use client"
 import React, { useEffect, useState } from 'react';
-
+import Image from 'next/image';
 function VideoPage() {
   const [videoUrl, setVideoUrl] = useState('');
 
@@ -30,7 +30,16 @@ function VideoPage() {
           autoPlay
         />
       ) : (
-        <p>Loading video...</p>
+        <div className='bg-[url("/bg.jpg")] w-full h-full flex flex-col justify-center items-center'>
+          <h1 className='text-5xl font-bold mb-4 text-center text-white animate-pulse	'>Listo para transmitir</h1>
+          <Image
+      src="/logo_smartway_optim.png"
+      width={1000}
+      height={1000}
+      alt="Picture of the author"
+      className='mb-4'
+    />
+        </div>
       )}
     </div>
   );
